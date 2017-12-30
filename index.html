@@ -2,23 +2,28 @@
 <html>
     <head>
         <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
         <title>
             My website
         </title>
         <style type="text/css">
+
+            html {
+                font-size: 2.5vh;
+            }
+
             body {
                 font-family: 'Roboto', sans-serif;
+                font-weight: 300;
 
                 padding: 0;
                 margin: 0;
                 display: flex;
-                background-color: #E5F0F1;
+                background-color: rgb(229, 240, 241);
                 flex-wrap: wrap;
             }
 
             a {
-                text-decoration: none;
                 color: black;
             }
 
@@ -34,7 +39,7 @@
 
             @media (max-width: 1000px) {
                 body > * {
-                    padding: 0 10px 0 10px;
+                    padding: 0 6vw 0 6vw;
                 }
             }
 
@@ -42,7 +47,7 @@
                 flex: 100%;
             }
 
-            body > *:nth-child(even) {
+            body > section:nth-child(odd) {
                 background-color: #59A8D9;
             }
 
@@ -52,15 +57,17 @@
                 background-color: white;
                 justify-content: space-between;
 
-                position: -webkit-sticky; /* Safari */
                 position: sticky;
-                top: 0;
+                line-height: 2.5em;
+                height: 2.5em;
+                
+                z-index: 100;
             }
 
             nav a {
                 display: block;
-                padding: 5px;
-                line-height: 50px;
+                padding: 0 10px;
+                text-decoration: none;
             }
 
             nav div.spacer {
@@ -75,7 +82,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
 
-                height: calc(100vh - 60px);
+                height: calc(100vh - 2.5em);
             }
 
             div.hero div.hero-text {
@@ -87,7 +94,15 @@
                 background-color: #0367A6;
                 color: white;
                 padding: 15px;
-                font-size: 2em;
+            }
+
+            section {
+                padding-top: 1em;
+                padding-bottom: 1em;
+            }
+
+            header > h2 + span {
+                margin-top: -2em;
             }
 
         </style>
@@ -107,6 +122,24 @@
                 <p>I'm the Lead Developer for Infrastructure at Acomodeo</p>
             </div>
         </div>
+
+        <section>
+            <p>
+                I've been a professional software developer for more than 5 years.
+                After starting out with a side job during high school, I'm now the Lead Developer 
+                for Infrastructure for the startup <a href="https://acomodeo.com">Acomodeo</a> in Frankfurt.
+                At Acomodeo I develop a large micro service infrastructure to connect the 
+                mostly offline serviced apartment market with the online booking world.
+            </p>
+        </section>
+
+        <section>
+            <header>
+                <h2>Skills</h2>
+                <span>My Software Engineering Experiences</span>
+            </header>
+        </section>
+
     </body>
 </html>
 
