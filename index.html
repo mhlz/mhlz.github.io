@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <title>
+            My website
+        </title>
+        <style type="text/css">
+            body {
+                font-family: 'Roboto', sans-serif;
+
+                padding: 0;
+                margin: 0;
+                display: flex;
+                background-color: #E5F0F1;
+                flex-wrap: wrap;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            a.active {
+                color: #0367A6;
+            }
+
+            @media (min-width: 1000px) {
+                body > * {
+                    padding: 0 30% 0 30%;
+                }
+            }
+
+            @media (max-width: 1000px) {
+                body > * {
+                    padding: 0 10px 0 10px;
+                }
+            }
+
+            body > * {
+                flex: 100%;
+            }
+
+            body > *:nth-child(even) {
+                background-color: #59A8D9;
+            }
+
+            nav {
+                margin: 0;
+                display: flex;
+                background-color: white;
+                justify-content: space-between;
+
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                top: 0;
+            }
+
+            nav a {
+                display: block;
+                padding: 5px;
+                line-height: 50px;
+            }
+
+            nav div.spacer {
+                flex: 100%;
+            }
+
+            div.hero {
+                padding: 0;
+
+                background-image: url("hero.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                height: calc(100vh - 60px);
+            }
+
+            div.hero div.hero-text {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #0367A6;
+                color: white;
+                padding: 15px;
+                font-size: 2em;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <a href="/" class="active">Home</a>
+            <div class="spacer"></div>
+            <a href="mailto:me@mhlz.de">me@mhlz.de</a>
+            <a href="https://github.com/mhlz" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+            <a href="https://twitter.com/mischaholz" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+        </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Hi, I'm Mischa Holz!</h1>
+                <p>I'm the Lead Developer for Infrastructure at Acomodeo</p>
+            </div>
+        </div>
+    </body>
+</html>
+
