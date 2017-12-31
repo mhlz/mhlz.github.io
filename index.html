@@ -2,7 +2,7 @@
 <html>
     <head>
         <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" rel="stylesheet">
         <title>
             My website
         </title>
@@ -10,11 +10,33 @@
 
             html {
                 font-size: 2.5vh;
+
+                font-weight: 200;
+            }
+
+            h1 > span.small, h2 > span.small, h3 > span.small, h4 > span.small {
+                font-size: .75em;
+                display: inline-block;
+            }
+
+            h1 {
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            h2 {
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+            h3 {
+                font-weight: 200;
+                text-transform: uppercase;
+            }
+            h4 {
+                font-weight: 200;
             }
 
             body {
-                font-family: 'Roboto', sans-serif;
-                font-weight: 300;
+                font-family: 'Source Sans Pro', sans-serif;
 
                 padding: 0;
                 margin: 0;
@@ -31,12 +53,6 @@
                 color: #0367A6;
             }
 
-            @media (min-width: 1000px) {
-                body > * {
-                    padding: 0 30% 0 30%;
-                }
-            }
-
             @media (max-width: 1000px) {
                 body > * {
                     padding: 0 6vw 0 6vw;
@@ -48,7 +64,7 @@
             }
 
             body > section:nth-child(odd) {
-                background-color: #59A8D9;
+                background-color: #73C2F3;
             }
 
             nav {
@@ -83,6 +99,7 @@
                 background-size: cover;
 
                 height: calc(100vh - 2.5em);
+                max-width: none;
             }
 
             div.hero div.hero-text {
@@ -93,7 +110,11 @@
                 transform: translate(-50%, -50%);
                 background-color: #0367A6;
                 color: white;
-                padding: 15px;
+                padding: 50px;
+            }
+            
+            div.hero div.hero-text h1 {
+                font-weight: 100;
             }
 
             section {
@@ -101,10 +122,90 @@
                 padding-bottom: 1em;
             }
 
-            header > h2 + span {
-                margin-top: -2em;
+            section > header {
+                text-align: center;
             }
 
+            header > h2 {
+                margin-bottom: 0.2em;
+            }
+
+            section div.list {
+                margin-top: 5vh;
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+
+            }
+            section div.list > div > header {
+                text-align: center;
+            }
+
+            section div.image-list {
+                display: flex;
+                flex-direction: column;
+            }
+            section div.image-list > div {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+
+                margin-bottom: 1em;
+            }
+            section div.image-list > div > * {
+                margin: 10px;
+            }
+            section div.image-list > div > img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+
+            div.center {
+                text-align: center;
+            }
+
+            a.button {
+                display: inline-block;
+                border: .05em solid #0367A6;
+                border-radius: 2em;
+                padding: .5em 1em .5em 1em;
+                font-size: .9em;
+                text-decoration: none;
+                margin-top: 10px;
+            }
+
+            a.button:hover {
+                color: white;
+                background-color: #0367A6;
+            }
+
+            @media (min-width: 1000px) {
+                body > * {
+                    max-width: 700px;
+                    padding: 0 calc((100vw - 700px) / 2);
+                }
+                section div.list > div {
+                    max-width: 320px;
+                    padding: 10px;
+                }
+                section div.image-list > div > * {
+                    max-width: 310px;
+                }
+                section div.image-list > div > img {
+                    max-width: 50%;
+                }
+            }
+
+            section.address {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            section:last-child {
+                padding-bottom: 4em;
+            }
         </style>
     </head>
 
@@ -118,7 +219,7 @@
         </nav>
         <div class="hero">
             <div class="hero-text">
-                <h1>Hi, I'm Mischa Holz!</h1>
+                <h1>HI, I'M MISCHA HOLZ!</h1>
                 <p>I'm the Lead Developer for Infrastructure at Acomodeo</p>
             </div>
         </div>
@@ -134,14 +235,128 @@
         </section>
 
         <section>
-            <!--
             <header>
                 <h2>Skills</h2>
                 <span>My Software Engineering Experiences</span>
             </header>
-            -->
+
+            <div class="list">
+                <div>
+                    <header>
+                        <i class="fas fa-database fa-3x"></i>
+                        <h3>FULL STACK</h3>
+                    </header>
+                    <p>
+                    When I started working as a professional software engineer, I started with focussing on the entire software architecture stack at my job at <a href="https://www.4fb.de" target="_blank">4fb</a>, helping to develop the PHP based CMS <a href="https://www.contenido.org" target="_blank">CONTENIDO</a>.
+                    </p>
+                    <p>
+                    Implementing new features in HTML, JavaScript, PHP and MySQL has taught me a lot about how the web and the different technologies work together.
+                    </p>
+                </div>
+                <div>
+                    <header>
+                        <i class="fas fa-server fa-3x"></i>
+                        <h3>BACKEND</h3>
+                    </header>
+                    <p>Early at Acomodeo the development team consisted of 3 people and we had to develop a lot of features very rapidly while also building a robust infrastructure for future business endeavours. During that time I fell in love with <a href="https://kotlinlang.org" target="_blank">Kotlin</a> and <a href="https://spring.io" target="_blank">Spring</a>, both of which I now use a lot for backend work.</p>
+
+                    <p>While the team grew it also became increasingly clear, that we had to grow into different roles, which meant for me that I started doing a lot more backend work (without losing sight of the end user of course).</p>
+                </div>
+                <div>
+                    <header>
+                        <i class="fas fa-cloud fa-3x"></i>
+                        <h3>INFRASTRUCTURE</h3>
+                    </header>
+                    <p>
+                    Nowadays the development team at Acomodeo consists of 9 people. Having been there from pretty much the beginning I'm now responsible for keeping track of how our diverse micro service infrastructure is working together and how it can be expanded to cover more and more features.
+                    </p>
+                    <p>
+                    This means designing and implementing large distributed systems using our existing software libraries and making sure it is all working together.
+                    </p>
+                </div>
+                <div>
+                    <header>
+                        <i class="fas fa-question fa-3x"></i>
+                        <h3>The Future</h3>
+                    </header>
+                    <p>
+                    Everything is changing constantly in the world of software development. That's why I make sure to stay updated on current and future libraries, languages and methodologies.
+                    </p>
+                </div>
+            </div>
         </section>
 
+        <section>
+            <header>
+                <h2>Projects</h2>
+            </header>
+            <p>Like most software developers I also have quite a few side projects and hobby projects. Most of these relate to games or my voluntary work for the <a href="http://www.hsaka.de/" target="_blank">HsAka</a>, but also some useful libraries and university projects.</p>
+
+            <div class="image-list">
+                <div>
+                    <img src="tortuga.png" alt="Screenshot of Tortuga">
+                    <div>
+                        <h3>Tortuga</h3>
+                        <p>TorTUga is a Resource Management System written for the educational department of the TU-Darmstadt. It was developed using Java and Spring to provide a RESTful API for a single page application written with Angular.</p>
+                        <div class="center">
+                            <a class="button" href="https://github.com/CSW-TorTUga" target="_blank">Source on Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="thewayhome.png" alt="Screenshot of The Way Home">
+                    <div>
+                        <h3>The Way Home</h3>
+                        <p>The Way Home is a game that my friends and I developed in 100 hours for a game jam. It was written in Java using AWT for 2D rendering. The game features a ghost who is trying to find a way back home. The player has the ability to "possess" enemies to gain their abilities (for example jumping or shooting fireballs).</p>
+                        <div class="center">
+                            <a class="button" href="https://github.com/ilu-studios/The_Way_Home" target="_blank">Source on Github</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="alumnet.png" alt="Screenshot of the AlumNet">
+                    <div>
+                        <h3>AlumNet</h3>
+                        <p>AlumNet is a private social networking platform for alumni of the Hessische Schülerakademie. It was made in PHP with a RESTful web API which could allow 3rd party developers to develop their own clients.</p>
+                        <div class="center">
+                            <a class="button" href="http://alumni-hsaka.de/" target="_blank">More Info</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section>
+            <header>
+                <h2>My Professional Career</h2>
+            </header>
+
+            <h3>Lead Developer<br><span class="small">April 2016 - today</span></h3>
+            <p>Currently I'm working as the Lead Developer for Infrastructure at Acomodeo.</p>
+            <h3>Computer Science Student<br><span class="small">October 2013 - today</span></h3>
+            <p>I'm also still studying to get a Bachelor's Degree in Computer Science at the TU Darmstadt.</p>
+            <h3>Working Student<br><span class="small">August 2014 - March 2016</span></h3>
+            <p>My second professional job was a working student position as a Java developer at <a href="https://www.mvb-online.de/" target="_blank">MVB</a>. During this time I first came into contact with Spring and its large eco-system of libraries.</p>
+            <h3>PHP Developer<br><span class="small">February 2012 - July 2014</span></h3>
+            <p>At 4fb I worked as a PHP developer on the open source CMS CONTENIDO. I implemented various features in its backend such as drag and drop image uploading, new plugins and cleaning up a lot of very old PHP code.</p>
+        </section>
+
+        <section class="address">
+            <div>
+                <h4>Address</h4>
+                Spießstraße 67<br>
+                63071 Offenbach<br>
+                Germany
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <a href="mailto:me@mhlz.de">me@mhlz.de</a><br>
+                <a href="tel:+491724098055">+49 172 4098055</a>
+            </div>
+            <div>
+                <h4>Follow</h4>
+                <a href="https://github.com/mhlz" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                <a href="https://twitter.com/mischaholz" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+        </section>
     </body>
 </html>
-
