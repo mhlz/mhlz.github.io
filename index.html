@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="progressive-image.min.css">
+        <script src="progressive-image.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" rel="stylesheet">
+
         <title>Mischa Holz's Website</title>
+
         <style type="text/css">
 
             html {
@@ -173,15 +177,19 @@
             section div.image-list > div > * {
                 margin: 10px;
             }
-            section div.image-list > div > img {
-                max-height: 100%;
-                max-width: 100%;
+            section div.image-list img {
+                height: 100%;
+                width: 100%;
+            }
+            section div.image-list > div > a {
+                display: block;
+                height: 100%;
+                width: 100%;
             }
 
             div.center {
                 text-align: center;
             }
-
             a.button {
                 display: inline-block;
                 border: .05em solid #0367A6;
@@ -313,7 +321,9 @@
 
             <div class="image-list">
                 <div>
-                    <img src="tortuga.png" alt="Screenshot of Tortuga">
+                    <a href="tortuga.png" class="progressive replace">
+                        <img src="tortuga_preview.png" alt="Screenshot of Tortuga" class="preview">
+                    </a>
                     <div>
                         <h3>Tortuga</h3>
                         <p>TorTUga is a Resource Management System written for the educational department of the TU-Darmstadt. It was developed using Java and Spring to provide a RESTful API for a single page application written with Angular.</p>
@@ -323,7 +333,9 @@
                     </div>
                 </div>
                 <div>
-                    <img src="thewayhome.png" alt="Screenshot of The Way Home">
+                    <a href="thewayhome.png" class="progressive replace">
+                        <img src="thewayhome_preview.png" alt="Screenshot of The Way Home" class="preview">
+                    </a>
                     <div>
                         <h3>The Way Home</h3>
                         <p>The Way Home is a game that my friends and I developed in 100 hours for a game jam. It was written in Java using AWT for 2D rendering. The game features a ghost who is trying to find a way back home. The player has the ability to "possess" enemies to gain their abilities (for example jumping or shooting fireballs).</p>
@@ -333,7 +345,9 @@
                     </div>
                 </div>
                 <div>
-                    <img src="alumnet.png" alt="Screenshot of the AlumNet">
+                    <a href="alumnet.png" class="progressive replace">
+                        <img src="alumnet_preview.png" alt="Screenshot of the AlumNet" class="preview">
+                    </a>
                     <div>
                         <h3>AlumNet</h3>
                         <p>AlumNet is a private social networking platform for alumni of the Hessische Schülerakademie. It was made in PHP with a RESTful web API which could allow 3rd party developers to develop their own clients.</p>
